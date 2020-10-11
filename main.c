@@ -154,7 +154,7 @@ int main(int argc, char **argv) {
     timespec_get(&casual_start, TIME_UTC);
     result = matrice_mult_casual(lhs, rhs);
     timespec_get(&casual_end, TIME_UTC);
-
+    matrice_free(result);
     struct timespec thread_start, thread_end;
     timespec_get(&thread_start, TIME_UTC);
     result = matrice_mult_threads(lhs, rhs, threads_limit);
